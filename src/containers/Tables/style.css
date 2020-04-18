@@ -1,0 +1,34 @@
+.table{
+    background-color: lightgrey;
+    height: 30px;
+    font-size: 30px;
+    color: black;
+    font-family: fantasy;
+    width: 70%;
+}
+.tableList{
+    width: 70%;
+   border-style: double;
+   border-width: 70%;
+   height: 200px;
+
+    
+}
+
+.wait{
+    background-color: lightgrey;
+    height: 30px;
+    font-size: 30px;
+    color: black;
+    font-family: fantasy;
+    width: 70%;
+}
+.waitList{
+    width: 70%;
+    border-style: double;
+    border-width: 70%;
+    height: 200px;
+ 
+
+}
+
