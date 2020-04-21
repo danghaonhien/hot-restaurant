@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  transition: 1s;
+}
+a:hover {
+  text-decoration: underline;
+}
+.nav-link {
+  color: blanchedalmond;
+}
+.carousel img {
+  width: 90%;
+  margin: auto;
+  height: auto;
+}
+footer {
+  font-weight: 400;
+  font-family: "Gotu", sans-serif;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.buttonHomepage {
+  margin: 15px;
+}
+.buttonMenu {
+  margin: 5px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.openClose {
+  text-align: center;
+}
+.cardContainer {
+  text-align: center;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  ...;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  ...;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  ...;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  ...;
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  ...;
+}
