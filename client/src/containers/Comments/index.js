@@ -1,48 +1,80 @@
 import React, { Component } from "react";
 import ListComments from "./../../component/ListComments";
-import axios from "axios";
 import "./index.css";
+import API from "../../component/Utils/api";
 class Comments extends Component {
   state = {
     input: "",
+    reply: [],
     comments: [],
   };
+
   async componentDidMount() {
+    this.getComments();
+  }
+
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    API.createComment({ comments: this.state.input }).then((res) => {
+      this.setState({ comments: res.data, input: "" });
+    });
+    alert("Thank you for your feedback!");
+  };
+
+  handleReply = (commentId, commentText) => {
+    const newReply = {
+      reply: commentText,
+      comment_id: commentId
+    };
+    API.createReply(newReply).then(res => {
+      this.setState({ reply: res.data })
+    });
+  };
+
+  getComments = () => {
     try {
       // Destructure data from response, rename it into comments
-      axios.get("/api/comments").then((response) => {
-        console.log(response.data);
+      API.getComment().then((response) => {
         this.setState({ comments: response.data });
       });
-      // const { data: comments } = await axios.get('http:/localhost:3001/comments');
-      // this.setState({ comments });
+      API.getReply().then((res) => {
+        this.setState({ reply: res.data });
+      })
     } catch (e) {
       console.log(e);
     }
   }
-  handleInputChange = (e) => {
-    const { value } = e.target;
-    this.setState({ input: value });
-  };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post("/api/comments", { comments: this.state.input }).then((res) => {
-      this.setState({ comments: res.data, input: "" });
-    });
-  };
+
+  reRenderParent = () => {
+    this.getComments();
+  }
+
   render() {
     return (
       <div className='container'>
         <h1>Send us your feedback!</h1>
-        <input
+        <textarea
+        placeholder="Write a comment ..."
           className='form-control'
           onChange={this.handleInputChange}
           value={this.state.input}
+          name="input"
         />
         <button onClick={this.handleSubmit} className='btn btn-info'>
           Send
         </button>
-        <ListComments items={this.state.comments} />
+        <ListComments
+          renderParent={this.reRenderParent}
+          reply={this.state.reply}
+          handleInputChange={this.handleInputChange}
+          items={this.state.comments}
+          handleReply={this.handleReply}
+           />
       </div>
     );
   }

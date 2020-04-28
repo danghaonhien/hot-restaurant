@@ -3,6 +3,9 @@ CREATE TABLE commentTb (
     comments VARCHAR(500) NOT NULL,
     PRIMARY KEY (id)
 );
-INSERT INTO commentTb (comments)
-VALUES ("The food here is very good"),
-("The service is also very good");
+CREATE TABLE replyTb (
+    id INT AUTO_INCREMENT NOT NULL,
+    reply VARCHAR(500) NOT NULL,
+    comment_id INT NOT NULL,
+    PRIMARY KEY (id)
+);
