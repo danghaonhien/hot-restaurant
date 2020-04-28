@@ -3,7 +3,10 @@ CREATE TABLE commentTb (
     comments VARCHAR(500) NOT NULL,
     PRIMARY KEY (id)
 );
+
 CREATE TABLE replyTb (
-    reply VARCHAR NOT NULL,
-    comment_id INT NOT NULL
-)
+    id INT AUTO_INCREMENT NOT NULL,
+    reply VARCHAR(500) NOT NULL,
+    comment_id INT NOT NULL,
+    PRIMARY KEY (id)
+);

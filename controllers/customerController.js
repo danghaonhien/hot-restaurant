@@ -44,4 +44,36 @@ module.exports = {
       }
     );
   },
+  getCustomerCount: (req, res) => {
+    connection.query(customerQueries.getCustomerCount, (err, todos) => {
+      if (err) {
+        throw err;
+      }
+      return res.json(todos[0]);
+    });
+  },
+
+  getCustomerById: (req, res) => {
+    const { customerId } = req.params;
+    connection.query(customerQueries.getCustomerById, parseInt(customerId), (err, todos) => {
+        if(err) {
+            return res.json(err);
+        }
+        return res.json(todos[0]);
+    });
+},
+
+updateCustomerById: (req, res) => {
+  const { customerId } = req.params;
+  const { name } = req.body;
+  const { email } = req.body;
+  const { phone } = req.body;
+
+  connection.query(customerQueries.updateCustomerById, [name,email,phone, parseInt(customerId)], (err, dbJson) => {
+      if(err) {
+          throw new Error(err);
+      }
+      res.json({ success: true });
+  });
+}
 };
