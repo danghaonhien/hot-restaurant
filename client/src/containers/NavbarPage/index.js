@@ -68,6 +68,11 @@ class NavbarPage extends Component {
                       Waiting List
                     </MDBBtn>
                   </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBBtn href='/About' size='sm' className='buttonMenu'>
+                      About
+                    </MDBBtn>
+                  </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBContainer>
