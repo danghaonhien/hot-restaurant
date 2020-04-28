@@ -7,6 +7,8 @@ import Reservation from "./../containers/Reservation";
 import Tables from "./../containers/Tables";
 import Menu from "./../containers/Menu";
 import Comments from "./../containers/Comments";
+import Details from "./../containers/Details";
+import Update from "./../containers/Update";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route exact path='/reservation' component={Reservation} />
         <Route exact path='/tables' component={Tables} />
         <Route exact path='/comments' component={Comments} />
+        <Route exact path='/Details/:customerId' component={Details} />
+        <Route exact path='/Update/:customerId' component={Update} />
+
       </Switch>
 
       <Footer />
