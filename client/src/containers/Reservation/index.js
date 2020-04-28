@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 import axios from "axios";
 import "./style.css";
 class Reservation extends Component {
   // Setting the component's initial state
   state = {
+
     name: "",
     email: "",
     phone: "",
+    count: 0
   };
   handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -18,23 +21,32 @@ class Reservation extends Component {
       [name]: value,
     });
   };
-  // componentDidMount() {
-  //     this.fetchTodos();
-  //   }
-  //   fetchTodos = () => {
-  //     axios.get('/api/todos').then(res => {
-  //       console.log(res);
-  //       this.setState({todos: res.data});
-  //     });
-  //   }
+  componentDidMount() {
+    this.fetchTodos();
+  }
+  fetchTodos = () => {
+    axios.get('/api/customer/count').then(res => {
+      console.log(res.data["COUNT(id)"]);
+      if(res.data["COUNT(id)"]>10){
+        this.setState({count: 10});
+      }else{
+
+        this.setState({ count: res.data["COUNT(id)"] });
+      }
+
+
+
+    });
+  }
   handleFormSubmit = (event) => {
     console.log("I happened");
     // The second parameter to this post request is going to become req.body
     axios.post("/api/customer", this.state).then((res) => {
-      this.setState(this.state);
+      this.setState({ name: "", email: "", phone: "" });
     });
   };
   render() {
+
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div className='container'>
@@ -44,7 +56,7 @@ class Reservation extends Component {
           </h1>
           <hr></hr>
           <h5>
-            We only have 10 tables! Book your seat before they are all gone!
+            WE ONLY HAVE {10 - this.state.count} AVAILABLE TABLES LEFT OF 10.
           </h5>
           <button type='button' className='btn btn-primary'>
             <Link className='nav-link' to='/Tables'>
@@ -52,12 +64,7 @@ class Reservation extends Component {
             </Link>{" "}
             <i className='fa fa-list-alt'></i>
           </button>
-          <button type='button' className='btn btn-danger'>
-            <Link className='nav-link' to='/'>
-              Home
-            </Link>{" "}
-            <i className='fa fa-id-card-o'></i>
-          </button>
+         
         </div>
         <h1>Table Reservation</h1>
         <form className='form'>
@@ -93,7 +100,8 @@ class Reservation extends Component {
               placeholder='Phone Number'
             />
           </div>
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          <Button variant="outline-primary" onClick={this.handleFormSubmit}>Submit</Button>
+          
         </form>
         <br></br>
       </div>
