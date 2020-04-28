@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import TableList from "../../component/TableList";
 import "./style.css";
@@ -7,7 +6,9 @@ class Tables extends Component {
   state = {
     table: [],
     waitList: [],
-  };
+    availableTable: 0
+   
+    };
 
   componentDidMount() {
     this.fetchCoustomer();
@@ -28,35 +29,38 @@ class Tables extends Component {
       let waitListCopy = [];
       let tableCopy = [];
       for (let i = 0; i < dataPost.length; i++) {
-        if (tableCopy.length > 10) {
+        if (tableCopy.length > 9) {
           waitListCopy.push(dataPost[i]);
         } else {
           tableCopy.push(dataPost[i]);
+         
+          
         }
       }
+     
       this.setState({
         table: tableCopy,
         waitList: waitListCopy,
+        availableTable:10-tableCopy.length
+        
       });
+      
     });
+    
+    
   };
   render() {
+    
     return (
       <div className='container'>
-        <div className='jumbotron text-center'>
+        <div className='jumbotron text-center' id="jumbo">
           <h1>
             <i className='fa fa-fire'></i> Hot Restaurant
           </h1>
           <hr></hr>
           <h5>
-            We only have 10 tables! Book your seat before they are all gone!
+           WE ONLY HAVE {this.state.availableTable} AVAILABLE TABLES LEFT OF 10.            
           </h5>
-          <button type='button' className='btn btn-danger'>
-            <Link className='nav-link' to='/'>
-              Home
-            </Link>{" "}
-            <i className='fa fa-id-card-o'></i>
-          </button>
         </div>
         <div className='list'>
           <label className='table'>
@@ -66,6 +70,7 @@ class Tables extends Component {
             <TableList
               items={this.state.table}
               handleDelete={this.deleteCustomerById}
+              
             />
           </div>
           <br></br>

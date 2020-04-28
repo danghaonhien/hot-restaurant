@@ -1,30 +1,43 @@
 .table {
-  background-color: lightgrey;
-  height: 30px;
+  background-color:white;
+  height: 40px;
   font-size: 30px;
-  color: black;
-  font-family: fantasy;
-  width: 70%;
+  color: lightseagreen;
+ font-style: oblique;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width:70%;
+  font-weight: 600;  
 }
 .tableList {
-  width: 70%;
-  border-style: double;
-  border-width: 70%;
-
-  text-align: center;
+  width:70%;
 }
 .wait {
-  background-color: lightgrey;
-  height: 30px;
+  background-color:white;
+  height: 40px;
   font-size: 30px;
-  color: black;
-  font-family: fantasy;
-  width: 70%;
+  color: lightseagreen;
+ font-style: oblique;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width:70%;
+  font-weight: 600;
+  
 }
 .waitList {
-  width: 70%;
-  border-style: double;
-  border-width: 70%;
-
-  text-align: center;
+  width:70%;  
 }
+
+#jumbo {
+  background-color: palegoldenrod;
+}
+
+.tableNo {
+  font-family: serif;
+  font-size: medium;
+}
+
+.buttons{
+  text-align: center
+}
+
+
+
