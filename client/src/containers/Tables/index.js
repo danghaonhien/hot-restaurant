@@ -6,9 +6,8 @@ class Tables extends Component {
   state = {
     table: [],
     waitList: [],
-    availableTable: 0
-   
-    };
+    availableTable: 0,
+  };
 
   componentDidMount() {
     this.fetchCoustomer();
@@ -33,33 +32,27 @@ class Tables extends Component {
           waitListCopy.push(dataPost[i]);
         } else {
           tableCopy.push(dataPost[i]);
-         
-          
         }
       }
-     
+
       this.setState({
         table: tableCopy,
         waitList: waitListCopy,
-        availableTable:10-tableCopy.length
-        
+        availableTable: 10 - tableCopy.length,
       });
-      
     });
-    
-    
   };
   render() {
-    
     return (
       <div className='container'>
-        <div className='jumbotron text-center' id="jumbo">
+        <div className='jumbotron text-center'>
           <h1>
             <i className='fa fa-fire'></i> Hot Restaurant
           </h1>
           <hr></hr>
           <h5>
-           WE ONLY HAVE {this.state.availableTable} AVAILABLE TABLES LEFT OF 10.            
+            WE ONLY HAVE {this.state.availableTable} AVAILABLE TABLES LEFT OF
+            10.
           </h5>
         </div>
         <div className='list'>
@@ -70,7 +63,6 @@ class Tables extends Component {
             <TableList
               items={this.state.table}
               handleDelete={this.deleteCustomerById}
-              
             />
           </div>
           <br></br>

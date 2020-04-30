@@ -53,7 +53,12 @@ footer {
   text-align: center;
   margin-top: 15px;
 }
+.aboutUs {
+  height: 100%;
+  width: 100%;
+}
 
+/* 0 */
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   ...;

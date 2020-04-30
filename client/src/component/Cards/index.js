@@ -9,8 +9,8 @@ function Cards() {
         <Card>
           <blockquote className='blockquote mb-0 card-body'>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              posuere erat a ante.
+              "Dinner at Hot Restaurant was an absolute highlight out of all the
+              restaurants I have dinned at over the years."
             </p>
             <footer className='blockquote-footer'>
               <small className='text-muted'>
@@ -22,8 +22,9 @@ function Cards() {
         <Card>
           <blockquote className='blockquote mb-0 card-body'>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              posuere erat a ante.
+              "Food was excellent as was the wine pairing. Staff very friendly
+              and helpful. Was a unforgettable evening. Just needs more ladies
+              toilets, long lines!"
             </p>
             <footer className='blockquote-footer'>
               <small className='text-muted'>
@@ -35,8 +36,9 @@ function Cards() {
         <Card>
           <blockquote className='blockquote mb-0 card-body'>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              posuere erat a ante.
+              "We celebrated my son’s birthday at Hot Restaurant. The 6 course
+              degustation was our choice, and we thoroughly enjoyed each
+              course."
             </p>
             <footer className='blockquote-footer'>
               <small className='text-muted'>

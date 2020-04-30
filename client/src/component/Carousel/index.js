@@ -62,7 +62,7 @@ function CarouselBanner() {
             size='sm'
             className='buttonHomepage'
           >
-            Contact Us
+            Feedback
           </MDBBtn>
         </Carousel.Caption>
       </Carousel.Item>
