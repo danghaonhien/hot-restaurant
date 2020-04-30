@@ -8,7 +8,7 @@ class CarouselPage extends Component {
         <MDBRow>
           <MDBCol md='12' className='mb-3'>
             <img
-              src='https://c1.staticflickr.com/9/8389/8532747209_9ec4596e99_b.jpg'
+              src='https://www.myvenuefinder.com.au/wp-content/uploads/Untitled-design-41-Large.jpg'
               className='img-fluid z-depth-1'
               alt=''
             />
@@ -31,7 +31,7 @@ class CarouselPage extends Component {
           </MDBCol>
           <MDBCol lg='4' md='6' className='mb-3'>
             <img
-              src='https://mdbootstrap.com/img/Others/documentation/img(117)-mini.jpg'
+              src='https://media-cdn.tripadvisor.com/media/photo-s/0a/73/a1/e3/roasted-masterstock-duck.jpg'
               className='img-fluid z-depth-1'
               alt=''
             />
@@ -40,14 +40,14 @@ class CarouselPage extends Component {
         <MDBRow>
           <MDBCol md='6' className='mb-3'>
             <img
-              src='https://mdbootstrap.com/img/Others/documentation/img(118)-mini.jpg'
+              src='https://blog.lemonpi.net/wp-content/uploads/2007/01/Quay-MurrayCod-WaterChestnuts-BeanCurd.jpg'
               className='img-fluid z-depth-1'
               alt=''
             />
           </MDBCol>
           <MDBCol md='6' className='mb-3'>
             <img
-              src='https://mdbootstrap.com/img/Others/documentation/img(129)-mini.jpg'
+              src='https://blog.lemonpi.net/wp-content/uploads/2007/01/Quay-ConfitPigBelly-Abalone-Tofu.jpg'
               className='img-fluid z-depth-1'
               alt=''
             />

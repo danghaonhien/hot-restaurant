@@ -1,29 +1,29 @@
 .table {
-  background-color:white;
+  background-color: white;
   height: 40px;
   font-size: 30px;
   color: lightseagreen;
- font-style: oblique;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width:70%;
-  font-weight: 600;  
+  font-style: oblique;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 70%;
+  font-weight: 600;
 }
 .tableList {
-  width:70%;
+  width: 100%;
+  text-align: center;
 }
 .wait {
-  background-color:white;
+  background-color: white;
   height: 40px;
   font-size: 30px;
   color: lightseagreen;
- font-style: oblique;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width:70%;
+  font-style: oblique;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 70%;
   font-weight: 600;
-  
 }
 .waitList {
-  width:70%;  
+  width: 70%;
 }
 
 #jumbo {
@@ -35,9 +35,9 @@
   font-size: medium;
 }
 
-.buttons{
-  text-align: center
+.buttons {
+  text-align: center;
 }
-
-
-
+.list {
+  text-align: left;
+}

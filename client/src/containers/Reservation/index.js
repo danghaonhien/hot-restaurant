@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import axios from "axios";
 import "./style.css";
 class Reservation extends Component {
   // Setting the component's initial state
   state = {
-
     name: "",
     email: "",
     phone: "",
-    count: 0
+    count: 0,
   };
   handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -25,19 +24,15 @@ class Reservation extends Component {
     this.fetchTodos();
   }
   fetchTodos = () => {
-    axios.get('/api/customer/count').then(res => {
+    axios.get("/api/customer/count").then((res) => {
       console.log(res.data["COUNT(id)"]);
-      if(res.data["COUNT(id)"]>10){
-        this.setState({count: 10});
-      }else{
-
+      if (res.data["COUNT(id)"] > 10) {
+        this.setState({ count: 10 });
+      } else {
         this.setState({ count: res.data["COUNT(id)"] });
       }
-
-
-
     });
-  }
+  };
   handleFormSubmit = (event) => {
     console.log("I happened");
     // The second parameter to this post request is going to become req.body
@@ -46,7 +41,6 @@ class Reservation extends Component {
     });
   };
   render() {
-
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div className='container'>
@@ -58,13 +52,12 @@ class Reservation extends Component {
           <h5>
             WE ONLY HAVE {10 - this.state.count} AVAILABLE TABLES LEFT OF 10.
           </h5>
-          <button type='button' className='btn btn-primary'>
+          <button type='button' className='btn btn-secondary'>
             <Link className='nav-link' to='/Tables'>
               View Tables
             </Link>{" "}
             <i className='fa fa-list-alt'></i>
           </button>
-         
         </div>
         <h1>Table Reservation</h1>
         <form className='form'>
@@ -100,8 +93,9 @@ class Reservation extends Component {
               placeholder='Phone Number'
             />
           </div>
-          <Button variant="outline-primary" onClick={this.handleFormSubmit}>Submit</Button>
-          
+          <Button variant='outline-secondary' onClick={this.handleFormSubmit}>
+            Submit
+          </Button>
         </form>
         <br></br>
       </div>

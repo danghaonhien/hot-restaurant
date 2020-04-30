@@ -29,10 +29,10 @@ class Comments extends Component {
   handleReply = (commentId, commentText) => {
     const newReply = {
       reply: commentText,
-      comment_id: commentId
+      comment_id: commentId,
     };
-    API.createReply(newReply).then(res => {
-      this.setState({ reply: res.data })
+    API.createReply(newReply).then((res) => {
+      this.setState({ reply: res.data });
     });
   };
 
@@ -44,26 +44,26 @@ class Comments extends Component {
       });
       API.getReply().then((res) => {
         this.setState({ reply: res.data });
-      })
+      });
     } catch (e) {
       console.log(e);
     }
-  }
+  };
 
   reRenderParent = () => {
     this.getComments();
-  }
+  };
 
   render() {
     return (
       <div className='container'>
         <h1>Send us your feedback!</h1>
         <textarea
-        placeholder="Write a comment ..."
+          placeholder='Write a comment ...'
           className='form-control'
           onChange={this.handleInputChange}
           value={this.state.input}
-          name="input"
+          name='input'
         />
         <button onClick={this.handleSubmit} className='btn btn-info'>
           Send
@@ -74,7 +74,7 @@ class Comments extends Component {
           handleInputChange={this.handleInputChange}
           items={this.state.comments}
           handleReply={this.handleReply}
-           />
+        />
       </div>
     );
   }

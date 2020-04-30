@@ -4,3 +4,6 @@ h1 {
   word-spacing: 5px;
   text-align: center;
 }
+.container {
+  text-align: left;
+}

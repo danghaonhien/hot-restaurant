@@ -22,9 +22,7 @@ function Home() {
             <h5 className='text-uppercase mb-4 white-text '>
               <strong>Food | Wine</strong>
             </h5>
-            <MDBBtn outline color='white'>
-              Instagram
-            </MDBBtn>
+
             <MDBBtn href='/About' outline color='white'>
               About Us
             </MDBBtn>

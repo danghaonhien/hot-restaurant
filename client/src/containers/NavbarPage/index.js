@@ -73,6 +73,11 @@ class NavbarPage extends Component {
                       About
                     </MDBBtn>
                   </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBBtn href='/Comments' size='sm' className='buttonMenu'>
+                      Feedback
+                    </MDBBtn>
+                  </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBContainer>
